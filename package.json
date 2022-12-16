@@ -1,0 +1,22 @@
+{
+  "name": "basic-function",
+  "version": "1.2.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Binar-BEJ-Wave-7/Dasar-Function-JS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Binar-BEJ-Wave-7/Dasar-Function-JS/issues"
+  },
+  "homepage": "https://github.com/Binar-BEJ-Wave-7/Dasar-Function-JS#readme",
+  "dependencies": {
+    "axios": "^1.2.1"
+  }
+}
