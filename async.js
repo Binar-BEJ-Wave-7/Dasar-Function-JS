@@ -44,15 +44,51 @@ const axios = require('axios')
 // console.log("Saya akan dipanggil seketika")
 
 // promise
-// const thisIsFunctionPromise = () => {
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             const name = "Saefulloh"
+const thisIsFunctionPromise = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const name = "Saefulloh"
 
-//             resolve(name)
-//         }, 1)
-//     })
-// }
+            resolve(name)
+        }, 1)
+    })
+}
+
+const userAPI = "https://jsonplaceholder.typicode.com/users/3"
+
+const main = async () => {
+    try {
+        const result1 = await thisIsFunctionPromise()
+        console.log(result1)
+
+        const result2 = await thisIsFunctionPromise()
+        console.log(result2)
+
+        const result3 = await axios.get(userAPI)
+        // console.log(result3)
+
+        const result4 = await getRedirectPost()
+        console.log(result4)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const getRedirectPost = async () => {
+    try {
+        const postAPI = "https://jsonplaceholder.typicode.com/posts/3/error"
+
+        const result = await axios.get(postAPI)
+
+        return result.data
+    } catch (error) {
+        return {
+            "message": "gagal bos"
+        }
+    }
+}
+
+main()
 
 // thisIsFunctionPromise().then((result) => {
 //     console.log("ini adalah result", result)
@@ -74,13 +110,13 @@ const axios = require('axios')
 //     })
 // })
 
-const userAPI = "https://jsonplaceholder.typicode.com/users/3/inipastigagal/karna/apinya/gaada"
 
-axios.get(userAPI).then((result) => {
-    console.log(`Halo nama saya adalah ${result.data.name}.\nEmail saya adalah ${result.data.email}.\nSaya tinggal di ${result.data.address.street}`)
-}).catch(error => {
-    console.log(error.response.statusText)
-})
+
+// axios.get(userAPI).then((result) => {
+//     console.log(`Halo nama saya adalah ${result.data.name}.\nEmail saya adalah ${result.data.email}.\nSaya tinggal di ${result.data.address.street}`)
+// }).catch(error => {
+//     console.log(error.response.statusText)
+// })
 
 // async
 
